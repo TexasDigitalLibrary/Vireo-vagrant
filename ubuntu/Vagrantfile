@@ -48,5 +48,7 @@ Vagrant.configure('2') do |config|
     mvn clean compile
   SHELL
 
+  config.vm.synced_folder '.', '/home/vagrant/sync', type: 'virtualbox'
+
   config.vm.synced_folder 'src/Vireo', '/home/vagrant/Vireo', id: $name, create: true, mount_options: ['dmode=777', 'fmode=777']
 end

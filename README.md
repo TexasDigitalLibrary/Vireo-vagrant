@@ -36,9 +36,10 @@ Start Vireo
 
 Follow these instructions to start Vireo.
 
-1.	`vagrant ssh`
-2.	`cd Vireo`
-3.	`mvn clean spring-boot:run`
+1.	navigate to `Vireo-vagrant/[os]` directory
+2.	`vagrant ssh`
+3.	`cd Vireo`
+4.	`mvn clean spring-boot:run`
 
 Open Vireo
 ----------
