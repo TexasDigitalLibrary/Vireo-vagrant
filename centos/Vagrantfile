@@ -3,7 +3,7 @@
 
 $name = 'vireo-centos'
 
-$port = 9001
+$host_port = 9000
 
 Vagrant.configure('2') do |config|
   config.vm.box = 'centos/7'
@@ -20,16 +20,14 @@ Vagrant.configure('2') do |config|
     vb.cpus = 2
   end
 
-  config.vm.network 'forwarded_port', guest: 9000, host: $port, protocol: 'tcp'
+  config.vm.network 'forwarded_port', guest: 9000, host: $host_port, protocol: 'tcp'
 
   config.vm.provision 'shell', inline: <<-SHELL
-    yum install -y epel-release java-1.8.0-openjdk.x86_64 java-1.8.0-openjdk-devel.x86_64 gcc-c++ wget
+    yum install -y epel-release java-1.8.0-openjdk.x86_64 java-1.8.0-openjdk-devel.x86_64 gcc-c++ wget yum-utils
 
-    wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
-    sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
-    yum install -y apache-maven
+    yum-config-manager --enable ol7_optional_latest
 
-    yum install -y nodejs ruby ruby-devel git
+    yum install -y maven nodejs ruby ruby-devel git
 
     npm install -g bower
   SHELL

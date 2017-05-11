@@ -3,7 +3,7 @@
 
 $name = 'vireo-ubuntu'
 
-$port = 9002
+$host_port = 9000
 
 Vagrant.configure('2') do |config|
   config.vm.box = 'ubuntu/trusty64'
@@ -20,19 +20,22 @@ Vagrant.configure('2') do |config|
     vb.cpus = 2
   end
 
-  config.vm.network 'forwarded_port', guest: 9000, host: $port, protocol: 'tcp'
+  config.vm.network 'forwarded_port', guest: 9000, host: $host_port, protocol: 'tcp'
 
   config.vm.provision 'shell', inline: <<-SHELL
-    add-apt-repository -y ppa:openjdk-r/ppa
+    apt-add-repository -y ppa:openjdk-r/ppa
     apt-add-repository -y ppa:brightbox/ruby-ng
+
+    apt-get uninstall ruby
 
     apt-get update
 
-    apt-get install -y openjdk-8-jdk ruby2.0 ruby-dev maven git
+    apt-get install -y openjdk-8-jdk ruby2.2 ruby-dev maven git
 
     curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
     apt-get install -y nodejs
 
+    npm install -g npm
     npm install -g bower
 
     gem install compass --no-ri --no-rdoc
