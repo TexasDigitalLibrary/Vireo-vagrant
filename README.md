@@ -34,7 +34,7 @@ Follow these instructions to provision the Vireo virtual machine.
 Start Vireo
 -----------
 
-Follow these instructions to start Vireo.
+Follow these instructions to start Vireo. (Windows must use a shell with an SSH client, such as Git BASH, MINGW, etc. Alternatively have OpenSSH client installed.)
 
 1.	navigate to `Vireo-vagrant/[os]` directory
 2.	`vagrant ssh`
