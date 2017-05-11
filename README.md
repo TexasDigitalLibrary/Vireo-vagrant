@@ -1,7 +1,7 @@
 Vireo Development Vagrants
 ==========================
 
-These vagrants are to provision a virtual machine with Vireo and all its dependencies installed. Vireo will not be deployed in Tomcat, it will be manually started via maven spring-boot for development purposes. The vagrant will be running Vireo on port 9000, which must be available. The available operating systems for the guest virtual machine are all linux distributions; oracle, centos, and ubuntu. In order to use the vagrants please have the following prerequisites installed.
+These vagrants are to provision a virtual machine with Vireo and all its dependencies installed. Vireo will not be deployed in Tomcat, it will be manually started via maven spring-boot for development purposes. The vagrant will be running Vireo on port 9000, which must be available. The available operating systems for the guest virtual machine are all linux distributions; oracle, centos, and ubuntu. In order to develop using the vagrants please have the following prerequisites installed.
 
 Prerequisites
 -------------
@@ -20,15 +20,16 @@ Add the following required vagrant plugins.
 
 1.	`vagrant plugin install vagrant-vbguest`
 
-Provision VM
-------------
+Provision Virtual Machine
+-------------------------
 
 Follow these instructions to provision the Vireo virtual machine.
 
 1.	`git clone https://github.com/TexasDigitalLibrary/Vireo-vagrant.git`
-2.	select desired operating system for the guest virtual machine: oracle, centos, or ubuntu -> [os]
-3.	`cd [os]`
-4.	`vagrant up` (this will take a while)
+2.	`cd Vireo-vagrant`
+3.	select desired operating system for the guest virtual machine: oracle, centos, or ubuntu -> [os]
+4.	`cd [os]`
+5.	`vagrant up` (this will take a while)
 
 Start Vireo
 -----------
@@ -46,8 +47,8 @@ Test Vireo in the browser.
 
 1.	http://localhost:9000
 
-Develop
--------
+Develop Vireo
+-------------
 
 Import Vireo project into Eclipse
 
