@@ -3,6 +3,8 @@ Vireo Development Vagrants
 
 These vagrants are to provision a virtual machine with Vireo and all its dependencies installed. Vireo will not be deployed in Tomcat, it will be manually started via maven spring-boot for development purposes. The vagrant will be running Vireo on port 9000, which must be available. The available operating systems for the guest virtual machine are all linux distributions; oracle, centos, and ubuntu. In order to develop using theses vagrants, please have the following prerequisites installed.
 
+> centos currently not working for Windows host machines
+
 Prerequisites
 -------------
 
