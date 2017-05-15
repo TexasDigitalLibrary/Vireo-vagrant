@@ -42,7 +42,7 @@ Vagrant.configure('2') do |config|
   SHELL
 
   config.vm.provision 'shell', privileged: false, inline: <<-SHELL
-    git clone -b 4.0.x https://github.com/TexasDigitalLibrary/Vireo.git
+    git clone -b tcdl-workshop https://github.com/TexasDigitalLibrary/Vireo.git
 
     cd Vireo
     mvn clean compile
