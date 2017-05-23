@@ -66,3 +66,6 @@ Import Vireo project into Eclipse
 9.	click `Open` (should see the Vireo project)
 10.	click `Finish`
 11.	develop on Vireo
+
+
+https://gist.github.com/jeremythuff/ff068285554d0556d52478bb002b8b8a
